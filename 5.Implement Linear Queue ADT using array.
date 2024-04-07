@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int MAX_SIZE = 10; // Maximum size of the queue
+const int MAX_SIZE = 5; // Maximum size of the queue
 
 class Queue {
 private:
@@ -38,6 +38,7 @@ public:
             front = 0;
         rear = (rear + 1) % capacity;
         arr[rear] = value;
+        cout << "Enqueued element: " << value << endl;
     }
 
     int dequeue() {
@@ -50,6 +51,7 @@ public:
             front = rear = -1;
         else
             front = (front + 1) % capacity;
+        cout << "Dequeued element: " << value << endl;
         return value;
     }
 
@@ -80,6 +82,7 @@ int main() {
     Queue queue(MAX_SIZE);
     int choice, element;
 
+    // Menu-driven interface
     do {
         cout << "\n------ Menu ------" << endl;
         cout << "1. Enqueue" << endl;
@@ -97,9 +100,7 @@ int main() {
                 queue.enqueue(element);
                 break;
             case 2:
-                element = queue.dequeue();
-                if (element != -1)
-                    cout << "Element dequeued: " << element << endl;
+                queue.dequeue();
                 break;
             case 3:
                 element = queue.peek();
