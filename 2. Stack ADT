@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-const int MAX_SIZE = 100; // Maximum size of the stack
+const int MAX_SIZE = 10; // Maximum size of the stack
 
 class Stack {
 private:
@@ -87,3 +87,4 @@ int main() {
 
     return 0;
 }
+
